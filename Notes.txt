@@ -1,0 +1,29 @@
+Username -> Akash and password is 1234
+
+What is an app in django:
+
+ An app is a web application that has a specific meaning in your project, like a home page, a contact form, or a members database.
+ A jango site can have multiple apps or a single app can be present in multiple websites
+
+How to create apps in jango:
+ for creating an app in django we have to type manage.py startapp appname command then an app is created inside our mai proect and after that we have to register our app in settings .py file of the project inside installed apps
+
+why we use templates and static file in django
+ Templates- In django projects templates are used for rendering the html code or for rendring the layout of the page
+
+Static :
+ Static folder iis used for placing the static files like images,text file ,videos etc.
+ for loading the static file we have to type {% load static %}
+
+What is CDN :
+ cdn stands for Content Delivery Network
+ A CDN can be useful for more than serving and caching static content. When you put a CDN in front of your Django application, you get performance improvements from the optimised network and reduced TLS setup time.
+
+What are models in django :
+ A Django model is the built-in feature that Django uses to create tables, their fields, and various constraints.
+
+ like in this project we have created a shop app and inside its models.py we have created a model product and we also have to register the model inside the admin.py file of the app.
+ we will register like this from . import modelName and then we have to admin.site.register(modelName)
+
+What is Template inheritance 
+ Template inheritance simply means to inherit the properties of a template like. we can use common parts of templates without writing them again and again simply by inheriting it. 

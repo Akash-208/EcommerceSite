@@ -1,0 +1,89 @@
+{% extends "basic.html" %}
+{% block title %}Cart{% endblock title %}
+{% block css %}
+  
+{% endblock css %}
+{% block number %}
+  {{prodInCart}}
+{% endblock number %}
+{% block body %}
+
+
+<section class="vh-100%" style="background-color: #fdccbc; margin-top: 5px;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <p><span class="h2">Your Cart </span><span class="h4">({{prodInCart}} item in your cart)</span></p>
+                
+                
+        {% for prod in ap %}
+          <div class="card mb-4">
+            <div class="card-body p-4">
+
+              <div class="row align-items-center justify-content-around">
+                <div class="col-md-2">
+                  <img src="{{prod.Cimage.url}}"
+                    class="img-fluid" alt="image Unavailable">
+                </div>
+                
+                <div class="col-md-2 d-flex justify-content-center">
+                    <div>
+                        <p class="small text-muted mb-4 pb-2">Name</p>
+                    <p class="lead fw-normal mb-0">{{prod.Cprod_name}}</p>
+                </div>
+                </div>
+
+                <div class="col-md-2 d-flex justify-content-center">
+                    <div>
+                    <p class="small text-muted mb-4 pb-2">Quantity</p>
+                    <p class="lead fw-normal mb-0">{{prod.Cquantity}}</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Price</p>
+                    <p class="lead fw-normal mb-0">{{prod.Cquantity}} x {{prod.Cprice}}/-</p>
+                  </div>
+               </div>
+
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <a href="remove/{{prod.Cprod_id}}"><p class="lead fw-normal mb-0"><ion-icon name="close-outline"></ion-icon></p></a>                  
+                </div>
+              </div>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endfor %}
+
+<div class="card mb-5">
+    <div class="card-body p-4">
+        
+         <div class="float-end">
+            <p class="mb-0 me-5 d-flex align-items-center">
+                <span class="small text-muted me-2">Order total:</span> <span
+                class="lead fw-normal">{{total}}/- only</span>
+            </p>
+        </div> 
+  
+    </div>
+           </div>
+          
+          <div class="d-flex justify-content-end mb-5">
+              <a href=" /"><button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button></a>
+              <button type="button" class="btn btn-primary btn-lg">Order Now</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+{% endblock body %}
